@@ -7,7 +7,6 @@ gem "rails", "~> 7.0.6"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-gem "active_model_serializers"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -44,6 +43,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "dotenv-rails"
   gem "rspec-rails"
+  gem "pry"
 end
 
 group :development do
