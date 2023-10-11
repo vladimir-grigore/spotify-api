@@ -44,6 +44,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "rspec-rails"
   gem "pry"
+  gem "rubocop-rails", require: false
 end
 
 group :development do
