@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RetrieveAlbumsService
   attr_reader :artist_id
 
@@ -8,7 +10,7 @@ class RetrieveAlbumsService
   def call
     artist = RSpotify::Artist.find(artist_id)
 
-    artist&.albums.map do |album|
+    artist&.albums&.map do |album|
       {
         id: album.id,
         name: album.name,

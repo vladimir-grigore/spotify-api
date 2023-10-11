@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RetrieveTracksService
   attr_reader :album_id
 
@@ -8,10 +10,10 @@ class RetrieveTracksService
   def call
     album = RSpotify::Album.find(album_id)
 
-    album&.tracks.map do |track|
+    album&.tracks&.map do |track|
       {
         id: track.id,
-        name: track.name,
+        name: track.name
       }
     end
   end

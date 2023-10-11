@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RetrieveArtistsService
   attr_reader :artist_name
 

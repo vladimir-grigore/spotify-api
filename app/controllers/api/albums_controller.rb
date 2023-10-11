@@ -1,18 +1,22 @@
-class Api::AlbumsController < ApplicationController
-  def show
-    results = retrieve_albums_service(albums_params[:id]).call
-    render json: results, status: :ok
-  rescue => e
-    raise e
-  end
+# frozen_string_literal: true
 
-  private
+module Api
+  class AlbumsController < ApplicationController
+    def show
+      results = retrieve_albums_service(albums_params[:id]).call
+      render json: results, status: :ok
+    rescue StandardError => e
+      raise e
+    end
 
-  def albums_params
-    params.permit(:id)
-  end
+    private
 
-  def retrieve_albums_service(id)
-    RetrieveAlbumsService.new(artist_id: id)
+    def albums_params
+      params.permit(:id)
+    end
+
+    def retrieve_albums_service(id)
+      RetrieveAlbumsService.new(artist_id: id)
+    end
   end
 end

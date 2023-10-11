@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Api::Albums", type: :request do
-  describe "GET /index" do
+RSpec.describe 'Api::Albums', type: :request do
+  describe 'GET /index' do
     let(:artist) { RSpotify::Artist.new }
     let(:artist_id) { '0LcJLqbBmaGUft1e9Mm8HV' }
     let(:request) { get "/api/albums/#{artist_id}" }
@@ -17,7 +19,7 @@ RSpec.describe "Api::Albums", type: :request do
 
       expect(RSpotify::Artist).to have_received(:find).with(artist_id)
       expect(JSON.parse(response.body).length).to eq(2)
-      expect(JSON.parse(response.body).first.keys).to eq(["id", "name", "images"])
+      expect(JSON.parse(response.body).first.keys).to eq(%w[id name images])
     end
   end
 end
