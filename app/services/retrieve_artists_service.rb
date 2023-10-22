@@ -13,7 +13,8 @@ class RetrieveArtistsService
     results.map do |artist|
       {
         id: artist.id,
-        name: artist.name,
+        group: 'artist',
+        label: artist.name,
         images: artist.images
       }
     end
