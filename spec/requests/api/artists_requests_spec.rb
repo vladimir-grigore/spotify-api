@@ -17,7 +17,7 @@ RSpec.describe 'Api::Artists', type: :request do
 
       expect(RSpotify::Artist).to have_received(:search).with(artist_name)
       expect(JSON.parse(response.body).length).to eq(2)
-      expect(JSON.parse(response.body).first.keys).to eq(%w[id name images])
+      expect(JSON.parse(response.body).first.keys).to eq(%w[id group label images])
     end
   end
 end
