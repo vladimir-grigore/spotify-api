@@ -13,7 +13,8 @@ class RetrieveAlbumsService
     artist&.albums&.map do |album|
       {
         id: album.id,
-        name: album.name,
+        group: 'album',
+        label: album.name,
         images: album.images
       }
     end
