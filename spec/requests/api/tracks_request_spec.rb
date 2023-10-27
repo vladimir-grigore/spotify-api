@@ -19,7 +19,7 @@ RSpec.describe 'Api::Tracks', type: :request do
 
       expect(RSpotify::Album).to have_received(:find).with(album_id)
       expect(JSON.parse(response.body).length).to eq(2)
-      expect(JSON.parse(response.body).first.keys).to eq(%w[id name])
+      expect(JSON.parse(response.body).first.keys).to eq(%w[id group label])
     end
   end
 end
