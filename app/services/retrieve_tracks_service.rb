@@ -13,7 +13,8 @@ class RetrieveTracksService
     album&.tracks&.map do |track|
       {
         id: track.id,
-        name: track.name
+        group: 'track',
+        label: track.name
       }
     end
   end
